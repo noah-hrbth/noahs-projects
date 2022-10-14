@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta
+      name="description"
+      content="Simply type in any word or link and generate a QR Code for it.\nYou can also download the generated QR Code."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>QR Code Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header__title">QR Codes</h1>
+      <h2 class="header__sub-title">Generate QR Codes for everything!</h2>
+    </header>
+    <main>
+      <div class="main__user-input__container">
+        <label class="main__user-input__label" for="input"
+          >Type something...</label
+        >
+        <input
+          class="main__user-input__input"
+          type="text"
+          name="input"
+          id="input"
+          autocomplete="off"
+        />
+        <button
+          class="main__button button"
+          type="submit"
+          title="Click here to generate your QR Code"
+        >
+          Generate QR Code
+        </button>
+      </div>
+      <div class="main__pop-up">
+        <p>
+          Upps! That wasn't a valid input :/ <br />
+          Please type at least anything!
+        </p>
+      </div>
+      <div class="main__qr-code" id="qrcode"></div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css" />
+    <title>Unit Converter</title>
+  </head>
+  <body>
+    <img
+      src="/Images/refresh.svg"
+      alt="reset"
+      id="refresh"
+      onclick="refresh()"
+    />
+    <div class="container">
+      <div id="flex-item-1">
+        <h1>Unit Converter</h1>
+        <input type="reset" form="userinput-form" id="reset-btn" value="" />
+      </div>
+      <div id="flex-item-2">
+        <form id="userinput-form" class="form">
+          <input
+            type="text"
+            id="userinput"
+            autocomplete="off"
+            placeholder="From"
+          />
+          <select name="from-units" id="from-units">
+            <optgroup label="Absolute Units">
+              <option value="f_px" selected>Pixel (px)</option>
+              <option value="f_pt">Point (pt)</option>
+              <option value="f_cm">Centimeters (cm)</option>
+              <option value="f_mm">Millimeters (mm)</option>
+              <option value="f_in">Inches (in)</option>
+            </optgroup>
+            <optgroup label="Relative Units">
+              <option value="f_rem">Root Element (rem)</option>
+            </optgroup>
+          </select>
+        </form>
+      </div>
+      <div id="flex-item-3">
+        <button class="convert-btn" onclick="convert()">
+          <p class="btnEmoji">👇</p>
+        </button>
+      </div>
+      <div id="flex-item-4">
+        <form id="cpoutput-form" class="form">
+          <input
+            type="text"
+            id="cpoutput"
+            autocomplete="off"
+            disabled
+            placeholder="To"
+          />
+          <select name="to-units" id="to-units">
+            <optgroup label="Absolute Units">
+              <option
+                value="t_px"
+                class="t_units"
+                onclick="viewportHeightWidth()"
+              >
+                Pixel (px)
+              </option>
+              <option
+                value="t_pt"
+                class="t_units"
+                onclick="viewportHeightWidth()"
+              >
+                Point (pt)
+              </option>
+              <option
+                value="t_cm"
+                class="t_units"
+                onclick="viewportHeightWidth()"
+              >
+                Centimeters (cm)
+              </option>
+              <option
+                value="t_mm"
+                class="t_units"
+                onclick="viewportHeightWidth()"
+              >
+                Millimeters (mm)
+              </option>
+              <option
+                value="t_in"
+                class="t_units"
+                onclick="viewportHeightWidth()"
+              >
+                Inches (in)
+              </option>
+            </optgroup>
+            <optgroup label="Relative Units">
+              <option value="t_rem" selected onclick="viewportHeightWidth()">
+                Root Element (rem)
+              </option>
+            </optgroup>
+          </select>
+        </form>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

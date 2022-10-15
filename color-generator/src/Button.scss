@@ -2,13 +2,14 @@ button {
   all: unset;
   padding: 0.5em 1em;
   border-radius: 1rem;
-  cursor: pointer;
+  z-index: 1;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: 0.3s;
 
   &:hover,
   &:focus-visible {
+    transform: translateX(-0.1em) translateY(-0.1em);
     box-shadow: 10px 7px 0 var(--shadow-color);
   }
 

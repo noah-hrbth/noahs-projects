@@ -1,0 +1,14 @@
+.cursor {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: #fff;
+  border-radius: 100%;
+  mix-blend-mode: difference;
+  z-index: 10;
+  pointer-events: none;
+
+  @media (pointer: coarse) {
+    display: none;
+  }
+}

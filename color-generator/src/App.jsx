@@ -1,6 +1,7 @@
 import React from "react";
 import './App.scss';
 import Button from './Button.jsx';
+import Cursor from "./Cursor.jsx";
 
 class App extends React.Component {
     constructor(props) {
@@ -76,6 +77,10 @@ class App extends React.Component {
                 <Button
                     onClick={() => {
                         this.setRandomRGBColor();
+                        document.querySelectorAll('.app__link').forEach((link) => {
+                            link.style.pointerEvents = 'auto';
+                        });
+                        document.querySelector('.app__content').style.opacity = 1;
                         document.querySelector('button').innerText = 'Change';
                     }}
                     isLight={this.isLight()}
@@ -83,6 +88,7 @@ class App extends React.Component {
                 <div className={this.state.copied ? 'app__tooltip app__tooltip--visible' : 'app__tooltip'}>
                     <p>Copied! {this.state.selectedEmoji}</p>
                 </div>
+                <Cursor isLight={this.isLight()}/>
             </div>
         );
     }

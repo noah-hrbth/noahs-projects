@@ -1,14 +1,11 @@
 import React from "react";
+import './Cursor.scss';
 
-function Cursor() {
+function Cursor(props) {
     const mousePosition = useMousePosition();
 
     return (
-        <p>
-            Your cursor position:
-            <br/>
-            {JSON.stringify(mousePosition)}
-        </p>
+        <div className={props.isLight ? 'cursor cursor--dark' : 'cursor cursor--light'} style={{top: mousePosition.y - 25, left: mousePosition.x - 25}}></div>
     );
 }
 
@@ -29,7 +26,6 @@ const useMousePosition = () => {
             window.removeEventListener('mousemove', updateMousePosition);
         };
     }, []);
-
     return mousePosition;
 };
 

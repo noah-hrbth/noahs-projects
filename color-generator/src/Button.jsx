@@ -8,7 +8,9 @@ class Button extends React.Component {
 
     render() {
         return (
-            <button></button>
+            <button className={this.props.isLight ? 'dark' : 'light'} onClick={this.props.onClick}>
+                Turn the light on!
+            </button>
         );
     }
 }

@@ -1,1 +1,88 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
 
+.app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1em;
+  transition: 0.3s;
+
+  &--light {
+    --text-color: #000;
+    --text-color--reverse: #fff;
+    --tooltip-color: #fff;
+    --tooltip-bg-color: #000;
+  }
+
+  &--dark {
+    --text-color: #fff;
+    --text-color--reverse: #000;
+    --tooltip-color: #000;
+    --tooltip-bg-color: #fff;
+  }
+
+  &__content {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    gap: 0.5em;
+  }
+
+  &__headline,
+  &__link {
+    transition: 0.3s;
+    color: var(--text-color);
+  }
+
+  &__link {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      $color: var(--text-color--reverse);
+      content: '';
+      background-color: $color;
+      position: absolute;
+      left: 0;
+      bottom: 0.2em;
+      width: 100%;
+      height: 8px;
+      z-index: -1;
+      transition: all 0.3s;
+    }
+
+    &:hover,
+    &:focus-visible {
+      cursor: copy;
+
+      &::before {
+        height: 100%;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: 1rem;
+    background-color: var(--tooltip-bg-color);
+    color: var(--tooltip-color);
+    padding: 0.5em 1em;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: 0.3s;
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

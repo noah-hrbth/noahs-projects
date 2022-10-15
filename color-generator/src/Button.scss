@@ -1,0 +1,31 @@
+button {
+  all: unset;
+  padding: 0.5em 1em;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 10px 7px 0 var(--shadow-color);
+  }
+
+  &:active {
+    transform: translateX(0.1em) translateY(0.1em);
+    box-shadow: 0 0 0 var(--shadow-color);
+  }
+
+  &.dark {
+    --background-color: #fff;
+    --shadow-color: #000;
+    --text-color: #000;
+  }
+
+  &.light {
+    --background-color: #000;
+    --shadow-color: #fff;
+    --text-color: #fff;
+  }
+}

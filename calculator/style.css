@@ -11,11 +11,21 @@ body {
     border: 0;
 }
 
+.background {
+  position: absolute;
+  inset: 0;
+  background-image: url("./bbblurry.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .container {
     width: 25rem;
     background: #eeeeee;
     box-shadow: 0 1.25rem 2.5rem rgb(0, 0, 0, 0.1);
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 1rem 0 1rem 1rem;
+    z-index: 2;
 }
 
 table {
